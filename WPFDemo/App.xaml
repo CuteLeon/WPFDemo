@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:WPFDemo"
              StartupUri="MainWindow.xaml">
+    <!-- StartupUri 指定启动窗口，也可以删掉此处，使用其他方式启动窗口 -->
     <Application.Resources>
-         
+
     </Application.Resources>
 </Application>
