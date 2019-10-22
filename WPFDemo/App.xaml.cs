@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Diagnostics;
 using System.Windows;
+using System.Windows.Navigation;
 
 namespace WPFDemo
 {
@@ -23,6 +20,12 @@ namespace WPFDemo
             this.Exit += this.App_Exit;
             this.DispatcherUnhandledException += this.App_DispatcherUnhandledException;
             AppDomain.CurrentDomain.UnhandledException += this.CurrentDomain_UnhandledException;
+            this.Navigating += this.App_Navigating;
+        }
+
+        private void App_Navigating(object sender, NavigatingCancelEventArgs e)
+        {
+            Debug.Print($"转跳到页面：{e?.Uri?.OriginalString}");
         }
 
         protected override void OnStartup(StartupEventArgs e)

@@ -22,5 +22,11 @@ namespace WPFDemo.Pages
         {
             this.InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var reportPage = new ReportPage();
+            this.NavigationService.Navigate(reportPage);
+        }
     }
 }
