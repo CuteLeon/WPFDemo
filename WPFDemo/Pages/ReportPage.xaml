@@ -9,6 +9,7 @@
       Title="ReportPage">
 
     <Grid>
+        <!-- 设置容器背景和行列布局 -->
         <Grid.Background>
             <ImageBrush ImageSource="/Resources/watermark.png" />
         </Grid.Background>

@@ -7,8 +7,42 @@
       mc:Ignorable="d" 
       d:DesignHeight="364" d:DesignWidth="545"
       Title="HomePage">
+
     <!-- 可以在元素 A 的完整标签中继续使用 <A.{属性}> 为标签 A 的属性赋值复杂数据 -->
     <Grid Margin="10,10,10,10">
+        
+        <!-- 设置容器绑定的资源 -->
+        <Grid.Resources>
+            <!-- 设置 XML 资源 Key 和 Path -->
+            <XmlDataProvider x:Key="ExpenseDataSource" XPath="Expenses">
+                <x:XData>
+                    <Expenses xmlns="">
+                        <Person Name="Mike" Department="Legal">
+                            <Expense ExpenseType="Lunch" ExpenseAmount="50" />
+                            <Expense ExpenseType="Transportation" ExpenseAmount="50" />
+                        </Person>
+                        <Person Name="Lisa" Department="Marketing">
+                            <Expense ExpenseType="Document printing" ExpenseAmount="50"/>
+                            <Expense ExpenseType="Gift" ExpenseAmount="125" />
+                        </Person>
+                        <Person Name="John" Department="Engineering">
+                            <Expense ExpenseType="Magazine subscription" ExpenseAmount="50"/>
+                            <Expense ExpenseType="New machine" ExpenseAmount="600" />
+                            <Expense ExpenseType="Software" ExpenseAmount="500" />
+                        </Person>
+                        <Person Name="Mary" Department="Finance">
+                            <Expense ExpenseType="Dinner" ExpenseAmount="100" />
+                        </Person>
+                    </Expenses>
+                </x:XData>
+            </XmlDataProvider>
+
+            <!-- 设置数据模板 -->
+            <DataTemplate x:Key="nameItemTemplate">
+                <Label Content="{Binding XPath=@Name}"/>
+            </DataTemplate>
+        </Grid.Resources>
+
         <!-- 为 Grid 容器定义一列三行布局 -->
         <Grid.ColumnDefinitions>
             <ColumnDefinition MaxWidth="230" />
@@ -38,11 +72,9 @@
         </Border>
 
         <!-- 中心 -->
-        <ListBox Name="peopleListBox" Grid.Column="1" Grid.Row="2">
-            <ListBoxItem>Mike</ListBoxItem>
-            <ListBoxItem>Lisa</ListBoxItem>
-            <ListBoxItem>John</ListBoxItem>
-            <ListBoxItem>Mary</ListBoxItem>
+        <ListBox Name="peopleListBox" Grid.Column="1" Grid.Row="2" 
+             ItemsSource="{Binding Source={StaticResource ExpenseDataSource}, XPath=Person}"
+             ItemTemplate="{StaticResource nameItemTemplate}">
         </ListBox>
 
         <!-- 底部 -->
