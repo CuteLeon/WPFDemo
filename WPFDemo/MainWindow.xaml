@@ -4,8 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFDemo"
+        xmlns:pages="clr-namespace:WPFDemo.Pages"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        Source="Pages/HomePage.xaml">
     <!-- x:Class => 表示设置 x 命名空间下的 Class 属性，用于绑定此试图到指定类型的窗口类 -->
     <!-- xmlns:{命名空间导入别名}="程序集常量或命名空间路径" => 用于导入命名空间（支持智能提示） -->
+    <!-- Source 绑定此导航窗口的源，需要指明源的相对路径 -->
 </NavigationWindow>
