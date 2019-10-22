@@ -71,7 +71,7 @@
             <Label Style="{StaticResource listHeaderTextStyle}">Names</Label>
         </Border>
 
-        <!-- 中心 -->
+        <!-- 中心 绑定数据源和显示模板-->
         <ListBox Name="peopleListBox" Grid.Column="1" Grid.Row="2" 
              ItemsSource="{Binding Source={StaticResource ExpenseDataSource}, XPath=Person}"
              ItemTemplate="{StaticResource nameItemTemplate}">
