@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29411.108
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFDemo", "WPFDemo\WPFDemo.csproj", "{CF67562C-7E71-47CA-A62B-C019E192DC59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFDemo", "WPFDemo\WPFDemo.csproj", "{CF67562C-7E71-47CA-A62B-C019E192DC59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoneBorderResizableWindows", "NoneBorderResizableWindows\NoneBorderResizableWindows.csproj", "{F2330F74-4E9B-45C6-BDBF-DE183CDC95FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{CF67562C-7E71-47CA-A62B-C019E192DC59}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF67562C-7E71-47CA-A62B-C019E192DC59}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF67562C-7E71-47CA-A62B-C019E192DC59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2330F74-4E9B-45C6-BDBF-DE183CDC95FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2330F74-4E9B-45C6-BDBF-DE183CDC95FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2330F74-4E9B-45C6-BDBF-DE183CDC95FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2330F74-4E9B-45C6-BDBF-DE183CDC95FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
