@@ -14,13 +14,12 @@ namespace NoneBorderResizableWindows
 
         private void NoneButton_Click(object sender, RoutedEventArgs e)
         {
-            var noneWindow = new NoneWindow();
-            noneWindow.Show();
+            new NoneWindow().Show();
         }
 
         private void BorderButton_Click(object sender, RoutedEventArgs e)
         {
-
+            new BorderWindow().Show();
         }
     }
 }
