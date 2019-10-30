@@ -11,10 +11,23 @@
     <WindowChrome.WindowChrome>
         <WindowChrome
             CaptionHeight="0"
+            GlassFrameThickness="0"
             UseAeroCaptionButtons="False"
+            CornerRadius="0"
             ResizeBorderThickness="8"/>
     </WindowChrome.WindowChrome>
     <Grid>
+        <!-- 窗口最大化时会往屏幕外溢出几个像素，使用根基容器 Margin 修正 -->
+        <Grid.Style>
+            <Style TargetType="{x:Type Grid}">
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding WindowState, RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type Window}}}" Value="Maximized">
+                        <Setter Property="Margin" Value="8"/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Style>
+
         <Grid.RowDefinitions>
             <RowDefinition Height="42"/>
             <RowDefinition/>

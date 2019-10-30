@@ -23,7 +23,7 @@
             </TextBlock.Effect>
         </TextBlock>
         <Button Grid.Row="0" x:Name="BorderButton" Grid.Column="1" Content="ThreeDBorderWindow" Margin="20" Click="BorderButton_Click"/>
-        <TextBlock Grid.Row="1" Grid.Column="1" FontSize="15" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Top" Text="保留原有边框，但被覆盖；保留原有阴影；但最大化时会隐藏掉窗体边缘的8个像素宽度的内容">
+        <TextBlock Grid.Row="1" Grid.Column="1" FontSize="15" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Top" Text="保留原有边框，但被覆盖；保留原有阴影">
             <TextBlock.Effect>
                 <DropShadowEffect BlurRadius="10" ShadowDepth="0" Opacity="1" Color="Black"/>
             </TextBlock.Effect>
