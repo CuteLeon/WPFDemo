@@ -6,9 +6,10 @@
     <Application.Resources>
         <!-- 需要使用 TypeConverter 转换 string 为 Human -->
         <local:Human x:Key="TheMan" Name="I'm Human1" Child="I'm Child1"/>
-        
+
         <!-- 直接使用属性元素，不需要额外类型转换 -->
         <local:Human x:Key="AnotherMan" Name="I'm Human2">
+            <!-- 属性元素格式：(命名空间:){对象类型}.{属性名称} -->
             <local:Human.Child>
                 <local:Human Name="I'm Child2"/>
             </local:Human.Child>

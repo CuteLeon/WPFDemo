@@ -7,6 +7,25 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="Test" Margin="100" Click="Button_Click"></Button>
+        <Button Margin="100" Click="Button_Click">
+            <Button.Content>
+                <Grid>
+                    <Ellipse Width="120" Height="120">
+                        <Ellipse.Fill>
+                            <RadialGradientBrush GradientOrigin="0.25 0.25" RadiusX="0.75" RadiusY="0.75">
+                                <GradientStop Offset="0" Color="White" ></GradientStop>
+                                <GradientStop Offset="0.65" Color="Black" ></GradientStop>
+                                <GradientStop Offset="0.8" Color="Gray" ></GradientStop>
+                            </RadialGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Label Content="I am a Button" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White">
+                        <Label.Effect>
+                            <DropShadowEffect BlurRadius="10" ShadowDepth="0" Color="Red" Opacity="0.6"/>
+                        </Label.Effect>
+                    </Label>
+                </Grid>
+            </Button.Content>
+        </Button>
     </Grid>
 </Window>
