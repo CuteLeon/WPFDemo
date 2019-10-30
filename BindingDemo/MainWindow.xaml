@@ -26,8 +26,9 @@
         </Grid.RowDefinitions>
 
         <!-- 标记扩展：
-                    Binding(绑定)：绑定元素名称、数据路径、绑定类型、触发器、延迟、字符串格式
-                -->
+            Binding(绑定)：绑定元素名称、数据路径、绑定类型、触发器、延迟、字符串格式
+            可以额外绑定转换器，实现自定义转换逻辑
+        -->
         <TextBox Grid.Row="1" Grid.Column="1"
                  Text="{Binding ElementName=ValueSlider, Path=Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Delay=500, StringFormat=0.###, TargetNullValue=empty}"/>
 
@@ -38,6 +39,9 @@
             </TextBox.Text>
         </TextBox>
 
+        <!-- 绑定静态资源
+            {Binding 属性名称} 等效于 {Binding Path=属性名称}
+        -->
         <Slider x:Name="ValueSlider" Grid.Row="3" Grid.Column="1" Value="{Binding Source={StaticResource DefaultValue}, Mode=OneTime}"/>
 
     </Grid>
