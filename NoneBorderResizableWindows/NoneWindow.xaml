@@ -19,7 +19,7 @@
     -->
     <!-- 窗体边界样式：
         CaptionHeight="0" 标题栏高度置为0，避免影响重写的标题栏按钮
-        GlassFrameThickness="0" 避免最大化时，窗体会覆盖任务栏
+        GlassFrameThickness="0" 避免最大化时，窗体覆盖任务栏（仅仅是将窗口显示在任务栏后面，但是窗口仍然填充了整个屏幕）
         UseAeroCaptionButtons="False" 禁用原有标题栏按钮
         ResizeBorderThickness="8" 调整尺寸的边框宽度，与 Window.BorderThickness 对应
     -->
