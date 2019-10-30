@@ -59,6 +59,31 @@
             <Button Grid.Column="1" Style="{StaticResource MinButtonStyle}" x:Name="MinButton" Click="MinButton_Click"></Button>
             <Button Grid.Column="2" Style="{StaticResource MaxRestoreButtonStyle}" x:Name="MaxRestoreButton" Click="MaxRestoreButton_Click"></Button>
             <Button Grid.Column="3" Style="{StaticResource CloseButtonStyle}" x:Name="CloseButton" Click="CloseButton_Click"></Button>
+
+            <x:Code>
+                <![CDATA[
+                    private void TitleGrid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+                    {
+                        // 鼠标左键拖动标题栏
+                        this.DragMove();
+                    }
+
+                    private void MinButton_Click(object sender, RoutedEventArgs e)
+                    {
+                        this.WindowState = WindowState.Minimized;
+                    }
+
+                    private void MaxRestoreButton_Click(object sender, RoutedEventArgs e)
+                    {
+                        this.WindowState = this.WindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized;
+                    }
+
+                    private void CloseButton_Click(object sender, RoutedEventArgs e)
+                    {
+                        this.Close();
+                    }
+                ]]>
+            </x:Code>
         </Grid>
     </Grid>
 </Window>
