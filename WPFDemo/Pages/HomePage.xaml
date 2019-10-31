@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WPFDemo"
+      xmlns:system="clr-namespace:System;assembly=System.Runtime"
       mc:Ignorable="d" 
       d:DesignHeight="364" d:DesignWidth="545"
       Title="HomePage">
@@ -72,9 +73,20 @@
         </Border>
 
         <!-- 中心 绑定数据源和显示模板-->
-        <ListBox Name="peopleListBox" Grid.Column="1" Grid.Row="2" 
-             ItemsSource="{Binding Source={StaticResource ExpenseDataSource}, XPath=Person}"
-             ItemTemplate="{StaticResource nameItemTemplate}">
+        <ListBox Name="peopleListBox" Grid.Column="1" Grid.Row="2"
+            ItemsSource="{Binding Source={StaticResource ExpenseDataSource}, XPath=Person}"
+            ItemTemplate="{StaticResource nameItemTemplate}">
+            <!-- 或者使用 <x:Array/> 
+            <ListBox.ItemsSource>
+                <x:Array Type="{x:Type system:String}">
+                    <system:String>1</system:String>
+                    <system:String>2</system:String>
+                    <system:String>3</system:String>
+                    <system:String>4</system:String>
+                    <system:String>5</system:String>
+                </x:Array>
+            </ListBox.ItemsSource>
+            -->
         </ListBox>
 
         <!-- 底部 -->
