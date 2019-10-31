@@ -16,6 +16,7 @@
         <Grid.Resources>
             <!-- 设置 XML 资源 Key 和 Path -->
             <XmlDataProvider x:Key="ExpenseDataSource" XPath="Expenses">
+                <!-- x:XData 包含数据 -->
                 <x:XData>
                     <Expenses xmlns="">
                         <Person Name="Mike" Department="Legal">
