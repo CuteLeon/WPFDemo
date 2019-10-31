@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Linq;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace WPFDemo.Pages
@@ -17,6 +18,13 @@ namespace WPFDemo.Pages
         {
             var reportPage = new ReportPage(this.peopleListBox.SelectedItem);
             this.NavigationService.Navigate(reportPage);
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            var container = this.Content as Grid;
+            var control = container.Children.Cast<UIElement>().Last();
+            MessageBox.Show(LogicalTreeHelper.GetParent(control).GetType().Name);
         }
     }
 }

@@ -92,7 +92,7 @@
 
         <!-- 底部 -->
         <Button Grid.Column="1" Grid.Row="3" Click="Button_Click">View</Button>
-        <Button Grid.Column="0" Grid.Row="3" Click="Button_Click" Style="{x:Null}" Content="Another View">
+        <Button Grid.Column="0" Grid.Row="3" Click="Button_Click_1" Style="{x:Null}" Content="Another View">
             <!-- 或这样使用 <x:Null/>
             <Button.Style>
                 <x:Null/>
