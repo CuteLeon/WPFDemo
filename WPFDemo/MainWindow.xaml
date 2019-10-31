@@ -8,6 +8,8 @@
     扩展标记：
     x:Type 用于表达数据类型
     x:Null 空值
+    x:Array 数组
+    x:Static 引用后台代码的静态成员
 -->
 <NavigationWindow x:Class="WPFDemo.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -17,13 +19,13 @@
         xmlns:local="clr-namespace:WPFDemo"
         xmlns:pages="clr-namespace:WPFDemo.Pages"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="{x:Static local:MainWindow.WindowTitle}" Height="450" Width="800"
         Source="Pages/HomePage.xaml">
-    
+
     <NavigationWindow.Resources>
         <Style TargetType="{x:Type local:MainWindow}"></Style>
     </NavigationWindow.Resources>
-    
+
     <!-- x:Class => 表示设置 x 命名空间下的 Class 属性，用于绑定此试图到指定类型的窗口类 -->
     <!-- xmlns:{命名空间导入别名}="程序集常量或命名空间路径" => 用于导入命名空间（支持智能提示） -->
     <!-- Source 绑定此导航窗口的源，需要指明源的相对路径 -->

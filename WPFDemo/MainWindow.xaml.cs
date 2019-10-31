@@ -7,6 +7,8 @@ namespace WPFDemo
     /// </summary>
     public partial class MainWindow : NavigationWindow
     {
+        public static string WindowTitle { get; set; } = "WPF Demo !!!";
+
         public MainWindow()
         {
             this.InitializeComponent();
