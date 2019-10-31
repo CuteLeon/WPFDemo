@@ -10,7 +10,7 @@
 
     <!-- 可以在元素 A 的完整标签中继续使用 <A.{属性}> 为标签 A 的属性赋值复杂数据 -->
     <Grid Margin="10,10,10,10">
-        
+
         <!-- 设置容器绑定的资源 -->
         <Grid.Resources>
             <!-- 设置 XML 资源 Key 和 Path -->
@@ -78,6 +78,7 @@
         </ListBox>
 
         <!-- 底部 -->
-        <Button Grid.Column="1" Grid.Row="3" Click="Button_Click" Style="{StaticResource buttonStyle}">View</Button>
+        <Button Grid.Column="1" Grid.Row="3" Click="Button_Click">View</Button>
+        <Button Grid.Column="0" Grid.Row="3" Click="Button_Click" Style="{x:Null}">Another View</Button>
     </Grid>
 </Page>

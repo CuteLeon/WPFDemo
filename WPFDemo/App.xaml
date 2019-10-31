@@ -40,7 +40,10 @@
             <Setter Property="HorizontalAlignment" Value="Left" />
         </Style>
 
-        <Style x:Key="buttonStyle" TargetType="{x:Type Button}">
+        <!-- 同时为样式的 x:Key 和 x:TargetType 绑定为 x:Type ，此类型元素将自动应用此样式
+                除非显式的设置 Style 
+        -->
+        <Style x:Key="{x:Type Button}" TargetType="{x:Type Button}">
             <Setter Property="Width" Value="125" />
             <Setter Property="Height" Value="30" />
             <Setter Property="Margin" Value="0,10,0,0" />
