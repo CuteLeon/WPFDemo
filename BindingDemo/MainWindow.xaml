@@ -23,6 +23,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <!-- 标记扩展：
@@ -39,10 +40,14 @@
             </TextBox.Text>
         </TextBox>
 
+        <!-- 后台代码绑定 -->
+        <TextBox x:Name="DisplayTextBox" Grid.Row="3" Grid.Column="1"/>
+
+
         <!-- 绑定静态资源
             {Binding 属性名称} 等效于 {Binding Path=属性名称}
         -->
-        <Slider x:Name="ValueSlider" Grid.Row="3" Grid.Column="1" Value="{Binding Source={StaticResource DefaultValue}, Mode=OneTime}"/>
+        <Slider x:Name="ValueSlider" Grid.Row="4" Grid.Column="1" Value="{Binding Source={StaticResource DefaultValue}, Mode=OneTime}"/>
 
     </Grid>
 </Window>
