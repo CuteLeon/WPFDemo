@@ -50,8 +50,9 @@
         -->
         <Slider x:Name="ValueSlider" Grid.Row="4" Grid.Column="1" Value="{Binding Source={StaticResource DefaultValue}, Mode=OneTime}"/>
 
-        <StackPanel Grid.Row="5">
+        <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal">
             <Button x:Name="arrayButton" Content="ArrayDemo" Click="arrayButton_Click"/>
+            <Button x:Name="dataContextButton" Content="DataContextDemo" Click="dataContextButton_Click"/>
         </StackPanel>
     </Grid>
 </Window>

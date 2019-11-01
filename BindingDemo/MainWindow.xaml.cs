@@ -35,5 +35,10 @@ namespace BindingDemo
         {
             new ArrayBindingWindow().Show();
         }
+
+        private void dataContextButton_Click(object sender, RoutedEventArgs e)
+        {
+            new DataContextWindow().Show();
+        }
     }
 }
