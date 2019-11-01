@@ -24,6 +24,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <!-- 标记扩展：
@@ -49,5 +50,8 @@
         -->
         <Slider x:Name="ValueSlider" Grid.Row="4" Grid.Column="1" Value="{Binding Source={StaticResource DefaultValue}, Mode=OneTime}"/>
 
+        <StackPanel Grid.Row="5">
+            <Button x:Name="arrayButton" Content="ArrayDemo" Click="arrayButton_Click"/>
+        </StackPanel>
     </Grid>
 </Window>

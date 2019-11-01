@@ -26,5 +26,10 @@ namespace BindingDemo
             BindingOperations.SetBinding(this.DisplayTextBox, TextBox.TextProperty, binding);
              */
         }
+
+        private void arrayButton_Click(object sender, RoutedEventArgs e)
+        {
+            new ArrayBindingWindow().Show();
+        }
     }
 }
