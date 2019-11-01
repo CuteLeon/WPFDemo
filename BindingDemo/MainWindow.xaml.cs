@@ -9,9 +9,13 @@ namespace BindingDemo
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static string Title { get; set; } = "主窗口标题";
+
         public MainWindow()
         {
             this.InitializeComponent();
+
+            this.SetBinding(Window.TitleProperty, new Binding(".") { Source = Title });
 
             // 还可以为 Binding 指定转换器，用于将封装数据属性和元素属性类型的转换或计算逻辑；
             this.DisplayTextBox.SetBinding(TextBox.TextProperty, new Binding("Value") { Source = this.ValueSlider });
