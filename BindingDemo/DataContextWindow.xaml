@@ -14,8 +14,10 @@
     <Grid>
         <StackPanel>
             <!-- 不指定 Binding 的 Source 或 ElementName 是，将会自动逐级向上查找容器的 DataContext 直到找到存在 Path 所指属性的 DataContext -->
-            <TextBlock Text="{Binding Age}"></TextBlock>
-            <TextBlock Text="{Binding Name}"></TextBlock>
+            <Label Content="{Binding Age}"/>
+            <Label Content="{Binding Name}"/>
+            <!-- 不包含Path 的 Binding -->
+            <Label DataContext="自己的 DC" Content="{Binding}"/>
         </StackPanel>
     </Grid>
 </Window>
