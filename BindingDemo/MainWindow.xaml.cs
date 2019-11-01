@@ -13,6 +13,8 @@ namespace BindingDemo
         {
             this.InitializeComponent();
 
+            this.DisplayTextBox.SetBinding(TextBox.TextProperty, new Binding("Value") { Source = this.ValueSlider });
+            /* 或者
             Binding binding = new Binding
             {
                 Source = this.ValueSlider,
@@ -20,8 +22,6 @@ namespace BindingDemo
                 StringFormat = "0.##",
             };
 
-            this.DisplayTextBox.SetBinding(TextBox.TextProperty, binding);
-            /* 或者
             BindingOperations.SetBinding(this.DisplayTextBox, TextBox.TextProperty, binding);
              */
         }
