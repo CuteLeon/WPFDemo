@@ -9,7 +9,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoneBorderResizableWindows"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TypeConverterDemo", "TypeConverterDemo\TypeConverterDemo.csproj", "{AC42E609-9A4A-424D-A99F-120625EACBDA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BindingDemo", "BindingDemo\BindingDemo.csproj", "{B82CF41E-5266-4C4E-A188-AEFD05785250}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BindingDemo", "BindingDemo\BindingDemo.csproj", "{B82CF41E-5266-4C4E-A188-AEFD05785250}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Document", "Document", "{CC0DA54A-A655-4272-AB1C-3F98F626D599}"
+	ProjectSection(SolutionItems) = preProject
+		D:\Desktop\深入浅出WPF完整版.pdf = D:\Desktop\深入浅出WPF完整版.pdf
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
