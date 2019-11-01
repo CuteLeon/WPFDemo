@@ -20,7 +20,10 @@ namespace BindingDemo
                 StringFormat = "0.##",
             };
 
+            this.DisplayTextBox.SetBinding(TextBox.TextProperty, binding);
+            /* 或者
             BindingOperations.SetBinding(this.DisplayTextBox, TextBox.TextProperty, binding);
+             */
         }
     }
 }
