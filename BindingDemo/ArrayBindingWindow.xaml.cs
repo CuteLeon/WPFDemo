@@ -14,6 +14,8 @@ namespace BindingDemo
         {
             this.InitializeComponent();
             return;
+            
+            // "/" => ".FirstOrDefault()."
             var wordList = new List<string>() { "Hello", "Hi", "Wink", "Greet" };
             this.textBox1.SetBinding(TextBox.TextProperty, new Binding("/") { Source = wordList });
             this.textBox2.SetBinding(TextBox.TextProperty, new Binding("/Length") { Source = wordList, Mode = BindingMode.OneWay });
