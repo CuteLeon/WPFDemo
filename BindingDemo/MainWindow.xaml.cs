@@ -13,6 +13,7 @@ namespace BindingDemo
         {
             this.InitializeComponent();
 
+            // 还可以为 Binding 指定转换器，用于将封装数据属性和元素属性类型的转换或计算逻辑；
             this.DisplayTextBox.SetBinding(TextBox.TextProperty, new Binding("Value") { Source = this.ValueSlider });
             /* 或者
             Binding binding = new Binding
