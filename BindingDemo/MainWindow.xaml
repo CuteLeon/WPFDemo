@@ -54,6 +54,7 @@
             <Button Click="Button_Click" Tag="{x:Type local:ArrayBindingWindow}" Content="{Binding Tag.Name, RelativeSource={RelativeSource Mode=Self}}"/>
             <Button Click="Button_Click" Tag="{x:Type local:DataContextWindow}" Content="{Binding Tag.Name, RelativeSource={RelativeSource Mode=Self}}"/>
             <Button Click="Button_Click" Tag="{x:Type local:ItemSourceWindow}" Content="{Binding Tag.Name, RelativeSource={RelativeSource Mode=Self}}"/>
+            <Button Click="Button_Click" Tag="{x:Type local:RelativeSourceWindow}" Content="{Binding Tag.Name, RelativeSource={RelativeSource Mode=Self}}"/>
         </WrapPanel>
     </Grid>
 </Window>

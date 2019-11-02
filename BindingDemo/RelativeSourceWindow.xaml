@@ -1,0 +1,33 @@
+﻿<Window x:Class="BindingDemo.RelativeSourceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BindingDemo"
+        mc:Ignorable="d"
+        Title="RelativeSourceWindow" Height="450" Width="800">
+
+    <!-- 当我们无法准确得知数据的来源或元素名称，而只知道数据源与当前元素的UI树状关系时，可以使用 RelativeSource 解决 -->
+    <Grid Background="Red" Margin="30">
+        <DockPanel Background="Orange" Margin="30">
+            <Grid Background="Yellow" Margin="30">
+                <DockPanel Background="LawnGreen" Margin="30">
+                    <Label FontSize="24" Margin="30" Background="Gray" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Style="{x:Null}" Content="字体颜色为相对容器的背景色">
+                        <Label.Foreground>
+                            <!-- RelativeSource
+                                AncestorLevel: 查找的层级（需要大于 0）
+                                AncestorType: 查找的类型
+                                Mode: 查找的模式（为 Self 时表示自身，不需要指定其他两个参数）
+                            -->
+                            <!-- RelativeSource 类包含三个静态属性为预设的对象，可以通过 x:Static 直接使用：
+                                <Binding RelativeSource="{x:Static RelativeSource.Self}" Path="Background" />
+                            -->
+                            <!-- 向外查找第 2 个 Grid 类型的容器 -->
+                            <Binding RelativeSource="{RelativeSource AncestorLevel=2, Mode=FindAncestor, AncestorType=Grid}" Path="Background" />
+                        </Label.Foreground>
+                    </Label>
+                </DockPanel>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</Window>
