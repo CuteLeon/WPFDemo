@@ -17,11 +17,12 @@
                             <!-- RelativeSource
                                 AncestorLevel: 查找的层级（需要大于 0）
                                 AncestorType: 查找的类型
-                                Mode: 查找的模式（为 Self 时表示自身，不需要指定其他两个参数）
+                                Mode: 查找的模式（为 Self 时表示自身，PreviousData 表示数组中的前一个数据，TemplatedParent 表示数据模板容器 ）
                             -->
                             <!-- RelativeSource 类包含三个静态属性为预设的对象，可以通过 x:Static 直接使用：
                                 <Binding RelativeSource="{x:Static RelativeSource.Self}" Path="Background" />
                             -->
+                            <!-- RelativeSource 为同级或向上查找，无法向子级查找，因此应将 DataContext 尽可能放在包含所有需要取值的元素的容器元素中 -->
                             <!-- 向外查找第 2 个 Grid 类型的容器 -->
                             <Binding RelativeSource="{RelativeSource AncestorLevel=2, Mode=FindAncestor, AncestorType=Grid}" Path="Background" />
                         </Label.Foreground>
