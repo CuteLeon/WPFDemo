@@ -18,13 +18,13 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
 
         <!-- 标记扩展：
@@ -50,10 +50,10 @@
         -->
         <Slider x:Name="ValueSlider" Grid.Row="4" Grid.Column="1" Value="{Binding Source={StaticResource DefaultValue}, Mode=OneTime}"/>
 
-        <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal">
-            <Button Click="Button_Click" Content="ArrayBindingDemo" Tag="{x:Type local:ArrayBindingWindow}"/>
-            <Button Click="Button_Click" Content="DataContextDemo" Tag="{x:Type local:DataContextWindow}"/>
-            <Button Click="Button_Click" Content="ItemSourceDemo" Tag="{x:Type local:ItemSourceWindow}"/>
-        </StackPanel>
+        <WrapPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal">
+            <Button Click="Button_Click" Tag="{x:Type local:ArrayBindingWindow}" Content="{Binding Tag.Name, RelativeSource={RelativeSource Mode=Self}}"/>
+            <Button Click="Button_Click" Tag="{x:Type local:DataContextWindow}" Content="{Binding Tag.Name, RelativeSource={RelativeSource Mode=Self}}"/>
+            <Button Click="Button_Click" Tag="{x:Type local:ItemSourceWindow}" Content="{Binding Tag.Name, RelativeSource={RelativeSource Mode=Self}}"/>
+        </WrapPanel>
     </Grid>
 </Window>
