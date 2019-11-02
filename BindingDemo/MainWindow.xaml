@@ -53,6 +53,7 @@
         <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal">
             <Button x:Name="arrayButton" Content="ArrayDemo" Click="arrayButton_Click"/>
             <Button x:Name="dataContextButton" Content="DataContextDemo" Click="dataContextButton_Click"/>
+            <Button x:Name="itemSourceButton" Content="ItemSourceDemo" Click="itemSourceButton_Click"/>
         </StackPanel>
     </Grid>
 </Window>

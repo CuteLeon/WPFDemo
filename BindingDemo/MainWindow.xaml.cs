@@ -40,5 +40,10 @@ namespace BindingDemo
         {
             new DataContextWindow().Show();
         }
+
+        private void itemSourceButton_Click(object sender, RoutedEventArgs e)
+        {
+            new ItemSourceWindow().Show();
+        }
     }
 }

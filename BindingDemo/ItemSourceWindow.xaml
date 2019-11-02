@@ -1,0 +1,36 @@
+﻿<Window x:Class="BindingDemo.ItemSourceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BindingDemo"
+        mc:Ignorable="d"
+        Title="ItemSourceWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock  Grid.Row="0" Text="Index" Margin="5"/>
+        <TextBox Grid.Row="1" x:Name="IndexTextBox" FontSize="15" Margin="5" Text="{Binding ElementName=HumenListBox,Path=SelectedIndex, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"/>
+        <TextBlock  Grid.Row="2" Text="Humen" Margin="5"/>
+        <ListBox Grid.Row="3" x:Name="HumenListBox" Margin="5" ItemsSource="{Binding}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Width="18" Height="18"  StrokeThickness="1" Stroke="Red" Fill="Pink" Margin="5"/>
+                        <TextBlock Text="{Binding Name}" VerticalAlignment="Center" Margin="5" Width="Auto" MinWidth="50"/>
+                        <TextBlock Text="{Binding Age}" VerticalAlignment="Center" Margin="5" Width="Auto"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            <!-- 使用 SelectedValuePath 和 DisplayMemberPath 设置显示和取值路径
+            <ListBox.SelectedValuePath>Name</ListBox.SelectedValuePath>
+            <ListBox.DisplayMemberPath>Name</ListBox.DisplayMemberPath>
+            -->
+        </ListBox>
+    </Grid>
+</Window>
