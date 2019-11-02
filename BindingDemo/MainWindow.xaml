@@ -51,9 +51,9 @@
         <Slider x:Name="ValueSlider" Grid.Row="4" Grid.Column="1" Value="{Binding Source={StaticResource DefaultValue}, Mode=OneTime}"/>
 
         <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal">
-            <Button x:Name="arrayButton" Content="ArrayDemo" Click="arrayButton_Click"/>
-            <Button x:Name="dataContextButton" Content="DataContextDemo" Click="dataContextButton_Click"/>
-            <Button x:Name="itemSourceButton" Content="ItemSourceDemo" Click="itemSourceButton_Click"/>
+            <Button Click="Button_Click" Content="ArrayBindingDemo" Tag="{x:Type local:ArrayBindingWindow}"/>
+            <Button Click="Button_Click" Content="DataContextDemo" Tag="{x:Type local:DataContextWindow}"/>
+            <Button Click="Button_Click" Content="ItemSourceDemo" Tag="{x:Type local:ItemSourceWindow}"/>
         </StackPanel>
     </Grid>
 </Window>

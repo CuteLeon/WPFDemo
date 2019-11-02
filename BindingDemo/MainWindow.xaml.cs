@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 
@@ -31,19 +32,15 @@ namespace BindingDemo
              */
         }
 
-        private void arrayButton_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            new ArrayBindingWindow().Show();
-        }
+            if (!((sender as FrameworkElement).Tag is Type type) ||
+                !((Activator.CreateInstance(type) is Window window)))
+            {
+                return;
+            }
 
-        private void dataContextButton_Click(object sender, RoutedEventArgs e)
-        {
-            new DataContextWindow().Show();
-        }
-
-        private void itemSourceButton_Click(object sender, RoutedEventArgs e)
-        {
-            new ItemSourceWindow().Show();
+            window.Show();
         }
     }
 }
