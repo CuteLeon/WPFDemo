@@ -8,7 +8,19 @@
         Title="MainWindow" Height="450" Width="800">
 
     <!-- WPF UI 事件消息沿着 VisualTree 而不是 LogicalTree 传播 -->
-    <Grid>
-        <ProgressBar Value="5" Margin="10"/>
+    <!-- 在容器设置路由事件监听器，可监听内容所有此类事件 -->
+    <Grid x:Name="gridRoot" Background="BlueViolet" ButtonBase.Click="XAML_Grid_Click">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid x:Name="gridA" Grid.Column="0" Margin="20" Background="Orange" ButtonBase.Click="gridMiddle_Click">
+            <Button Margin="20" Content="按钮 A" />
+        </Grid>
+
+        <Grid x:Name="gridB" Grid.Column="1" Margin="20" Background="Pink" ButtonBase.Click="gridMiddle_Click">
+            <Button Margin="20" Content="按钮 B" />
+        </Grid>
     </Grid>
 </Window>

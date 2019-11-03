@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace EventDemo
 {
@@ -22,7 +12,31 @@ namespace EventDemo
     {
         public MainWindow()
         {
-            InitializeComponent();
+            this.InitializeComponent();
+
+            // 使用后台代码监听路由事件
+            this.gridRoot.AddHandler(Button.ClickEvent, new RoutedEventHandler(this.CSharp_Grid_Click));
+        }
+
+        private void XAML_Grid_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show($"XAML 绑定的路由事件：\nOriginalSource= {(e.OriginalSource as Button).Content}");
+
+            if (new Random().NextDouble() > 0.5)
+            {
+                // Handled 标记事件已被处理，不再继续传播
+                e.Handled = true;
+            }
+        }
+
+        private void CSharp_Grid_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show($"CSharp 绑定的路由事件：\nOriginalSource= {(e.OriginalSource as Button).Content}");
+        }
+
+        private void gridMiddle_Click(object sender, RoutedEventArgs e)
+        {
+            Debug.Print($"{(e.OriginalSource as Button).Content} 的事件经过了 {(sender as Grid).Name}");
         }
     }
 }
