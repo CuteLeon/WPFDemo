@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EventDemo"
+        xmlns:system="clr-namespace:System;assembly=System.Runtime"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 
@@ -11,16 +12,75 @@
     <!-- 在容器设置路由事件监听器，可监听内容所有此类事件 -->
     <Grid x:Name="gridRoot" Background="BlueViolet" ButtonBase.Click="XAML_Grid_Click">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
 
-        <Grid x:Name="gridA" Grid.Column="0" Margin="20" Background="Orange" ButtonBase.Click="gridMiddle_Click">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid x:Name="gridA" Grid.Column="0" Grid.Row="0" Margin="20" Background="Orange" ButtonBase.Click="gridMiddle_Click">
             <Button Margin="20" Content="按钮 A" />
         </Grid>
 
-        <Grid x:Name="gridB" Grid.Column="1" Margin="20" Background="Pink" ButtonBase.Click="gridMiddle_Click">
+        <Grid x:Name="gridB" Grid.Column="0" Grid.Row="1" Margin="20" Background="Pink" ButtonBase.Click="gridMiddle_Click">
             <Button Margin="20" Content="按钮 B" />
         </Grid>
+
+        <local:LeonButton Tag="button_1" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2"  Margin="10" Background="Red" ClickBubble="LeonButton_Click" ClickDirect="LeonButton_Click" ClickTunnel="LeonButton_Click">
+            <local:LeonButton.Resources>
+                <ResourceDictionary>
+                    <Thickness x:Key="margin" Left="25" Top="25" Right="25" Bottom="25"/>
+                </ResourceDictionary>
+            </local:LeonButton.Resources>
+
+            <local:LeonButton Tag="button_2" Background="CadetBlue" Margin="{StaticResource margin}" ClickBubble="LeonButton_Click" ClickDirect="LeonButton_Click" ClickTunnel="LeonButton_Click">
+                <local:LeonButton Tag="button_3" Background="DarkBlue" Margin="{StaticResource margin}" ClickBubble="LeonButton_Click" ClickDirect="LeonButton_Click" ClickTunnel="LeonButton_Click">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <local:LeonButton Tag="button_4" Grid.Column="0" Background="DeepSkyBlue" Margin="{StaticResource margin}" ClickBubble="LeonButton_Click" ClickDirect="LeonButton_Click" ClickTunnel="LeonButton_Click">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+
+                                <local:LeonButton Tag="button_5" Grid.Row="0" Background="DodgerBlue" Margin="{StaticResource margin}" ClickBubble="LeonButton_Click" ClickDirect="LeonButton_Click" ClickTunnel="LeonButton_Click">
+                                    <local:LeonButton Tag="button_6" Background="MediumSlateBlue" Margin="{StaticResource margin}" ClickBubble="LeonButton_Click" ClickDirect="LeonButton_Click" ClickTunnel="LeonButton_Click">
+                                    </local:LeonButton>
+                                </local:LeonButton>
+                                <local:LeonButton Tag="button_7" Grid.Row="1" Background="LightBlue" Margin="{StaticResource margin}" ClickBubble="LeonButton_Click" ClickDirect="LeonButton_Click" ClickTunnel="LeonButton_Click">
+                                    <local:LeonButton Tag="button_8" Background="MidnightBlue" Margin="{StaticResource margin}" ClickBubble="LeonButton_Click" ClickDirect="LeonButton_Click" ClickTunnel="LeonButton_Click">
+                                    </local:LeonButton>
+                                </local:LeonButton>
+                            </Grid>
+                        </local:LeonButton>
+                        <local:LeonButton Tag="button_9" Grid.Column="1" Background="LightSkyBlue" Margin="{StaticResource margin}" ClickBubble="LeonButton_Click" ClickDirect="LeonButton_Click" ClickTunnel="LeonButton_Click">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+
+                                <local:LeonButton Tag="button_10" Grid.Row="0" Background="LightSteelBlue" Margin="{StaticResource margin}" ClickBubble="LeonButton_Click" ClickDirect="LeonButton_Click" ClickTunnel="LeonButton_Click">
+                                    <local:LeonButton Tag="button_1" Background="PowderBlue" Margin="{StaticResource margin}" ClickBubble="LeonButton_Click" ClickDirect="LeonButton_Click" ClickTunnel="LeonButton_Click">
+                                    </local:LeonButton>
+                                </local:LeonButton>
+                                <local:LeonButton Tag="button_11" Grid.Row="1" Background="MediumBlue" Margin="{StaticResource margin}" ClickBubble="LeonButton_Click" ClickDirect="LeonButton_Click" ClickTunnel="LeonButton_Click">
+                                    <local:LeonButton Tag="button_12" Background="RoyalBlue" Margin="{StaticResource margin}" ClickBubble="LeonButton_Click" ClickDirect="LeonButton_Click" ClickTunnel="LeonButton_Click">
+                                    </local:LeonButton>
+                                </local:LeonButton>
+                            </Grid>
+                        </local:LeonButton>
+                    </Grid>
+                </local:LeonButton>
+            </local:LeonButton>
+        </local:LeonButton>
     </Grid>
 </Window>
