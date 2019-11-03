@@ -25,9 +25,9 @@ namespace DependencyPropertyDemo
         /// </remarks>
         public static readonly DependencyProperty SchoolNameProperty =
             DependencyProperty.RegisterAttached(
-                nameof(School.SchoolName),
-                typeof(string),
-                typeof(School),
+                nameof(School.SchoolName), // 注册属性名称
+                typeof(string), // 属性数据类型
+                typeof(School), // 绑定到的依赖对象类型
                 new PropertyMetadata("默认值"));
     }
 }
