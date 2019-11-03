@@ -20,7 +20,7 @@ namespace EventDemo
 
         private void XAML_Grid_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show($"XAML 绑定的路由事件：\nOriginalSource= {(e.OriginalSource as Button).Content}");
+            MessageBox.Show($"XAML 绑定的路由事件：\n接收者：{(sender as Grid).Name}\n事件源头：{(e.OriginalSource as Button).Content}\n事件名称：{e.RoutedEvent.Name}");
 
             if (new Random().NextDouble() > 0.5)
             {
@@ -31,7 +31,7 @@ namespace EventDemo
 
         private void CSharp_Grid_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show($"CSharp 绑定的路由事件：\nOriginalSource= {(e.OriginalSource as Button).Content}");
+            MessageBox.Show($"CSharp 绑定的路由事件：\n接收者：{(sender as Grid).Name}\n事件源头：{(e.OriginalSource as Button).Content}\n事件名称：{e.RoutedEvent.Name}");
         }
 
         private void gridMiddle_Click(object sender, RoutedEventArgs e)
