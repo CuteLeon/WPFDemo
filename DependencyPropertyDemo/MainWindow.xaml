@@ -7,6 +7,13 @@
         mc:Ignorable="d"
         Title="{Binding SchoolName, StringFormat={}学校名称：{0}}" Height="450" Width="800">
     <Grid>
+        <Grid.Resources>
+            <ResourceDictionary>
+                <local:School x:Key="211" SchoolName="211大学"/>
+                <local:Student x:Key="Leon" local:School.Grade="9"/>
+            </ResourceDictionary>
+        </Grid.Resources>
+
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>

@@ -36,6 +36,11 @@ namespace DependencyPropertyDemo
                     Mode = BindingMode.TwoWay,
                     UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
                 });
+
+            // 使用附加属性
+            var student = new Student();
+            School.SetGrade(student, 9);
+            _ = School.GetGrade(student);
         }
     }
 }
