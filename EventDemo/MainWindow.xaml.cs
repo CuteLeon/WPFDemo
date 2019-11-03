@@ -26,6 +26,11 @@ namespace EventDemo
 
         private void XAML_Grid_Click(object sender, RoutedEventArgs e)
         {
+            /* LogicalTree 展示逻辑上的控件（不包含用户控件内的子控件）
+             * VisualTree 展示所有可见的控件（包含空户控件内的子控件）
+             * e.OriginalSource 为 VisualTree 上的控件，可能为子控件
+             * e.Source 为 LogicalTree 上的控件
+             */
             MessageBox.Show($"XAML 绑定的路由事件：\n接收者：{(sender as Grid).Name}\n事件源头：{(e.OriginalSource as Button).Content}\n事件名称：{e.RoutedEvent.Name}\n事件策略：{e.RoutedEvent.RoutingStrategy}");
 
             if (new Random().NextDouble() > 0.5)
