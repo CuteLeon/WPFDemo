@@ -11,6 +11,7 @@ namespace CommandDemo
     /// </summary>
     public partial class MainWindow : Window
     {
+        // 也可以在 XAML 使用 {Binding} 或者 {DynamicResource} 动态变化控件的命令，因为控件只有一个 Command 属性；
         public RoutedCommand SubmitCommand = new RoutedCommand("Submit", typeof(MainWindow));
 
         public MainWindow()
