@@ -30,12 +30,12 @@ namespace CommandDemo
             this.SubmitCommand.InputGestures.Add(new KeyGesture(Key.S, ModifierKeys.Control));
             // 绑定命令目标
             this.submitButton.CommandTarget = this.messageTextBox;
-            this.submitButton.SetBinding(
-                Button.CommandParameterProperty,
-                new Binding(nameof(this.messageTextBox.Text))
-                {
-                    Source = this.messageTextBox
-                });
+            // 使用 MultiBinding 给命令传递多个参数
+            var multiBinding = new MultiBinding();
+            multiBinding.Converter = new MultiParameterValueConverter();
+            multiBinding.Bindings.Add(new Binding(nameof(this.messageTextBox.Text)) { Source = this.messageTextBox });
+            multiBinding.Bindings.Add(new Binding(nameof(this.submitButton.Name)) { Source = this.submitButton });
+            this.submitButton.SetBinding(Button.CommandParameterProperty, multiBinding);
 
             // 增加命令绑定
             var commandBinding = new CommandBinding() { Command = this.SubmitCommand };

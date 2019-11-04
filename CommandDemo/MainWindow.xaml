@@ -10,7 +10,19 @@
         <DockPanel x:Name="dockPanel">
             <Button x:Name="submitButton" Content="提交" Margin="5" DockPanel.Dock="Bottom"/>
             <!-- 使用标记声明 Command (此时的 DataContext 就是 Command 对象) 和 CommandParameter -->
-            <Button x:Name="commandButton" Content="命令" Margin="5" DockPanel.Dock="Bottom" Command="{Binding}" CommandParameter="{Binding Text, ElementName=messageTextBox}"/>
+            <Button x:Name="commandButton" Content="命令" Margin="5" DockPanel.Dock="Bottom" Command="{Binding}">
+                <Button.CommandParameter>
+                    <MultiBinding>
+                        <MultiBinding.Bindings>
+                            <Binding ElementName="messageTextBox" Path="Text" Mode="OneWay"/>
+                            <Binding ElementName="commandButton" Path="Name" Mode="OneWay"/>
+                        </MultiBinding.Bindings>
+                        <MultiBinding.Converter>
+                            <local:MultiParameterValueConverter/>
+                        </MultiBinding.Converter>
+                    </MultiBinding>
+                </Button.CommandParameter>
+            </Button>
             <TextBox x:Name="messageTextBox" Margin="5"/>
         </DockPanel>
     </Grid>
