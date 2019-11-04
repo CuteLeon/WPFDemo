@@ -1,5 +1,6 @@
 ﻿using System.CodeDom.Compiler;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
 
@@ -16,6 +17,9 @@ namespace CommandDemo
         {
             this.InitializeComponent();
             this.InitializeCommand();
+
+            // 直接把 Command 赋为 ViewModel
+            this.DataContext = this.SubmitCommand;
         }
 
         private void InitializeCommand()
@@ -26,6 +30,12 @@ namespace CommandDemo
             this.SubmitCommand.InputGestures.Add(new KeyGesture(Key.S, ModifierKeys.Control));
             // 绑定命令目标
             this.submitButton.CommandTarget = this.messageTextBox;
+            this.submitButton.SetBinding(
+                Button.CommandParameterProperty,
+                new Binding(nameof(this.messageTextBox.Text))
+                {
+                    Source = this.messageTextBox
+                });
 
             // 增加命令绑定
             var commandBinding = new CommandBinding() { Command = this.SubmitCommand };
@@ -53,7 +63,7 @@ namespace CommandDemo
 
         private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            MessageBox.Show($"发送消息：\n{this.messageTextBox.Text}");
+            MessageBox.Show($"发送消息：\n{e.Parameter}");
             this.messageTextBox.Text = string.Empty;
             e.Handled = true;
         }

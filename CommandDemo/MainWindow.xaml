@@ -9,6 +9,8 @@
     <Grid>
         <DockPanel x:Name="dockPanel">
             <Button x:Name="submitButton" Content="提交" Margin="5" DockPanel.Dock="Bottom"/>
+            <!-- 使用标记声明 Command (此时的 DataContext 就是 Command 对象) 和 CommandParameter -->
+            <Button x:Name="commandButton" Content="命令" Margin="5" DockPanel.Dock="Bottom" Command="{Binding}" CommandParameter="{Binding Text, ElementName=messageTextBox}"/>
             <TextBox x:Name="messageTextBox" Margin="5"/>
         </DockPanel>
     </Grid>
