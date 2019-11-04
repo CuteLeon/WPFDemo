@@ -4,9 +4,28 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ResourceDemo"
+        xmlns:system="clr-namespace:System;assembly=System.Runtime"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <!-- 每个界面元素均拥有 Resources 属性，使用 ResourceDictionary 以键值对性质存放资源 -->
+        <ResourceDictionary>
+            <system:String x:Key="title">我是窗口内容</system:String>
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <!-- 优先查找元素本身的资源，不存在时逐级向上查找资源 -->
+        <!--
+        StaticResource => OneTime 仅启动时读取一次资源
+        DynamicResource => OneWay 每次资源变化时，都会自动读取一次
+        -->
+        <TextBlock Grid.Row="0" Text="{StaticResource title}"></TextBlock>
+        <TextBlock Grid.Row="1" Text="{DynamicResource title}"></TextBlock>
+        <Button Grid.Row="2" Click="Button_Click"></Button>
     </Grid>
 </Window>
