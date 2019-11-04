@@ -18,9 +18,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Document", "Document", "{CC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PropertyDemo", "PropertyDemo\PropertyDemo.csproj", "{AFA6CA1E-D031-460F-A820-001CF6772D11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyPropertyDemo", "DependencyPropertyDemo\DependencyPropertyDemo.csproj", "{32537655-EE29-445C-AB0E-EBE4D229FC60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyPropertyDemo", "DependencyPropertyDemo\DependencyPropertyDemo.csproj", "{32537655-EE29-445C-AB0E-EBE4D229FC60}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventDemo", "EventDemo\EventDemo.csproj", "{C3362E75-B63E-47A2-B0E8-909ED138C5C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventDemo", "EventDemo\EventDemo.csproj", "{C3362E75-B63E-47A2-B0E8-909ED138C5C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandDemo", "CommandDemo\CommandDemo.csproj", "{7DE60D6B-ED00-4F0E-B4F6-C077900460C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,6 +58,10 @@ Global
 		{C3362E75-B63E-47A2-B0E8-909ED138C5C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3362E75-B63E-47A2-B0E8-909ED138C5C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3362E75-B63E-47A2-B0E8-909ED138C5C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DE60D6B-ED00-4F0E-B4F6-C077900460C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DE60D6B-ED00-4F0E-B4F6-C077900460C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DE60D6B-ED00-4F0E-B4F6-C077900460C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DE60D6B-ED00-4F0E-B4F6-C077900460C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
