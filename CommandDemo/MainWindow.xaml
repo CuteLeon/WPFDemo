@@ -8,6 +8,16 @@
         Title="MainWindow" Height="175" Width="260">
     <Grid>
         <DockPanel x:Name="dockPanel">
+            <!-- 以下静态类中预设有标准命令，可以直接使用
+            <Button Command="{x:Static ApplicationCommands.Close}"/>
+            <Button Command="{x:Static ComponentCommands.ScrollPageUp}"/>
+            <Button Command="{x:Static NavigationCommands.GoToPage}"/>
+            <Button Command="{x:Static EditingCommands.AlignRight}"/>
+            <Button Command="{x:Static MediaCommands.Play}"/>
+            <Button Command="{x:Static RibbonCommands.MaximizeRibbonCommand}"/>
+            <Button Command="{x:Static SystemCommands.CloseWindowCommand}"/>
+            -->
+
             <Button x:Name="submitButton" Content="提交" Margin="5" DockPanel.Dock="Bottom"/>
             <!-- 使用标记声明 Command (此时的 DataContext 就是 Command 对象) 和 CommandParameter -->
             <Button x:Name="commandButton" Content="命令" Margin="5" DockPanel.Dock="Bottom" Command="{Binding}">
