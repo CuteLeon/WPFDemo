@@ -10,6 +10,11 @@
     <Window.Resources>
         <!-- 每个界面元素均拥有 Resources 属性，使用 ResourceDictionary 以键值对性质存放资源 -->
         <ResourceDictionary>
+            <!-- 使用 ResourceDictionary.MergedDictionaries 合并资源字典 -->
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="OutResourceDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            
             <system:String x:Key="title">我是窗口内容</system:String>
         </ResourceDictionary>
     </Window.Resources>
