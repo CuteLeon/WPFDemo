@@ -63,9 +63,9 @@ namespace ResourceDemo {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] TextImage {
+        internal static byte[] TestImage {
             get {
-                object obj = ResourceManager.GetObject("TextImage", resourceCulture);
+                object obj = ResourceManager.GetObject("TestImage", resourceCulture);
                 return ((byte[])(obj));
             }
         }
