@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace TemplateDemo
 {
@@ -20,9 +8,18 @@ namespace TemplateDemo
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static readonly ObservableCollection<object> source = new ObservableCollection<object>();
+
         public MainWindow()
         {
-            InitializeComponent();
+            source.Add(new { Year = 2019, Price = 200 });
+            source.Add(new { Year = 2018, Price = 180 });
+            source.Add(new { Year = 2017, Price = 160 });
+            source.Add(new { Year = 2016, Price = 140 });
+            source.Add(new { Year = 2015, Price = 120 });
+
+            this.InitializeComponent();
+            this.DataContext = source;
         }
     }
 }

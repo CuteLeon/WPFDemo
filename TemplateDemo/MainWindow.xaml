@@ -6,7 +6,21 @@
         xmlns:local="clr-namespace:TemplateDemo"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+    <StackPanel>
+        <StackPanel.Resources>
+            <DataTemplate x:Key="dataTemplate">
+                <StackPanel Orientation="Horizontal">
+                    <Grid>
+                        <Rectangle Stroke="Red" Fill="Orange" Width="{Binding Price}"></Rectangle>
+                        <TextBlock Text="{Binding Year}"></TextBlock>
+                    </Grid>
+                    <TextBlock Text="{Binding Price}"></TextBlock>
+                </StackPanel>
+            </DataTemplate>
+        </StackPanel.Resources>
+        <!-- 使用 Template 实现 内容 和 形式 的解耦
+            Template 分为两类：ControlTemplate 和 DataTemplate
+        -->
+        <ListBox ItemTemplate="{StaticResource dataTemplate}" ItemsSource="{Binding}"/>
+    </StackPanel>
 </Window>
