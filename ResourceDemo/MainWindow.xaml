@@ -14,7 +14,13 @@
         </ResourceDictionary>
     </Window.Resources>
     <Grid>
+        <Grid.Resources>
+            <!-- 使用 Source 引入外部的资源字典文件 -->
+            <ResourceDictionary Source="OutResourceDictionary.xaml"/>
+        </Grid.Resources>
+
         <Grid.RowDefinitions>
+            <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
@@ -27,5 +33,6 @@
         <TextBlock Grid.Row="0" Text="{StaticResource title}"></TextBlock>
         <TextBlock Grid.Row="1" Text="{DynamicResource title}"></TextBlock>
         <Button Grid.Row="2" Click="Button_Click"></Button>
+        <TextBlock Grid.Row="3" Text="{StaticResource outTitle}"></TextBlock>
     </Grid>
 </Window>
