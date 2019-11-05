@@ -6,4 +6,27 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Resources\5bafa40f4bfbfbed2aea600d77f0f736afc31f14.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\5bafa40f4bfbfbed2aea600d77f0f736afc31f14.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="OutAnyResource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>OutAnyResource.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="OutAnyResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>OutAnyResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
 </Project>

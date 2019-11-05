@@ -14,7 +14,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="OutResourceDictionary.xaml"/>
             </ResourceDictionary.MergedDictionaries>
-            
+
             <system:String x:Key="title">我是窗口内容</system:String>
         </ResourceDictionary>
     </Window.Resources>
@@ -24,6 +24,10 @@
             <ResourceDictionary Source="OutResourceDictionary.xaml"/>
         </Grid.Resources>
 
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
@@ -35,9 +39,14 @@
         StaticResource => OneTime 仅启动时读取一次资源
         DynamicResource => OneWay 每次资源变化时，都会自动读取一次
         -->
-        <TextBlock Grid.Row="0" Text="{StaticResource title}"></TextBlock>
-        <TextBlock Grid.Row="1" Text="{DynamicResource title}"></TextBlock>
-        <Button Grid.Row="2" Click="Button_Click"></Button>
-        <TextBlock Grid.Row="3" Text="{StaticResource outTitle}"></TextBlock>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource title}"></TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="{DynamicResource title}"></TextBlock>
+        <Button Grid.Row="2" Grid.Column="0" Click="Button_Click"></Button>
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource outTitle}"></TextBlock>
+        <Grid Grid.Row="0" Grid.RowSpan="4" Grid.Column="1">
+            <Grid.Background>
+                <ImageBrush ImageSource="/Resources/5bafa40f4bfbfbed2aea600d77f0f736afc31f14.jpg"/>
+            </Grid.Background>
+        </Grid>
     </Grid>
 </Window>
