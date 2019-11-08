@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PaintAnimationDemo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="500" Width="800">
     <Window.Resources>
         <Style TargetType="{x:Type TextBlock}">
             <Setter Property="VerticalAlignment" Value="Center"/>
@@ -81,6 +81,10 @@
         </Style>
     </Window.Resources>
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -90,7 +94,10 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Column="0">
+        <Button x:Name="effectButton" Grid.Row="0" Grid.Column="0" Margin="5" Content="滤镜" Click="effectButton_Click"/>
+        <Button Grid.Row="0" Grid.Column="1" Margin="5" Content="动画"/>
+
+        <StackPanel Grid.Row="1" Grid.Column="0">
             <TextBlock Text="Line"/>
             <Line/>
             <Line StrokeDashArray="1"/>
@@ -105,7 +112,7 @@
             </Line>
         </StackPanel>
 
-        <StackPanel Grid.Column="1">
+        <StackPanel Grid.Row="1" Grid.Column="1">
             <!-- Brush 分类
                 SolidColorBrush: 单色实心画刷
                 LinearGradientBrush: 线性渐变画刷
@@ -154,7 +161,7 @@
             </Rectangle>
         </StackPanel>
 
-        <StackPanel Grid.Column="2">
+        <StackPanel Grid.Row="1" Grid.Column="2">
             <TextBlock Text="Ellipse"/>
             <Ellipse ToolTip="Ball">
                 <Ellipse.Fill>
@@ -173,7 +180,7 @@
             </Ellipse>
         </StackPanel>
 
-        <StackPanel Grid.Column="3">
+        <StackPanel Grid.Row="1" Grid.Column="3">
             <TextBlock Text="Polygon"/>
             <!-- 闭合直线 -->
             <Polygon>
@@ -185,7 +192,7 @@
             </Polygon>
         </StackPanel>
 
-        <StackPanel Grid.Column="4">
+        <StackPanel Grid.Row="1" Grid.Column="4">
             <TextBlock Text="Polyline"/>
             <!-- 非闭合直线 -->
             <Polyline>
@@ -198,7 +205,7 @@
             </Polyline>
         </StackPanel>
 
-        <StackPanel Grid.Column="5">
+        <StackPanel Grid.Row="1" Grid.Column="5">
             <TextBlock Text="Path"/>
             <Path x:Name="path1" Fill="Orange" Stroke="Red">
                 <!-- 数据类型：
