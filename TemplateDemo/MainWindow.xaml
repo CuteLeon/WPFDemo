@@ -79,7 +79,7 @@
             ItemsControl.ItemTemplate
             GridViewControl.CellTemplate
         -->
-        <ListBox x:Name="listBox" ItemTemplate="{StaticResource itemTemplate}" ItemsSource="{Binding}">
+        <ListBox x:Name="listBox" ItemTemplate="{StaticResource itemTemplate}" ItemsSource="{Binding}" MinHeight="50">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid></UniformGrid>
