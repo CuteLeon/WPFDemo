@@ -55,6 +55,30 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style TargetType="{x:Type Polygon}">
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Height" Value="100"/>
+            <Setter Property="Stroke" Value="Gray"/>
+            <Setter Property="StrokeThickness" Value="3"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Margin">
+                <Setter.Value>
+                    <Thickness Left="5" Bottom="5" Top="5" Right="5"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type Polyline}">
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Height" Value="100"/>
+            <Setter Property="Stroke" Value="Gray"/>
+            <Setter Property="StrokeThickness" Value="3"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Margin">
+                <Setter.Value>
+                    <Thickness Left="5" Bottom="5" Top="5" Right="5"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -151,17 +175,58 @@
 
         <StackPanel Grid.Column="3">
             <TextBlock Text="Polygon"/>
-
+            <!-- 闭合直线 -->
+            <Polygon>
+                <Polygon.Points>
+                    <Point X="0" Y="0"/>
+                    <Point X="10" Y="100"/>
+                    <Point X="100" Y="100"/>
+                </Polygon.Points>
+            </Polygon>
         </StackPanel>
 
         <StackPanel Grid.Column="4">
             <TextBlock Text="Polyline"/>
-
+            <!-- 非闭合直线 -->
+            <Polyline>
+                <Polyline.Points>
+                    <Point X="0" Y="0"/>
+                    <Point X="100" Y="100"/>
+                    <Point X="50" Y="100"/>
+                    <Point X="0" Y="50"/>
+                </Polyline.Points>
+            </Polyline>
         </StackPanel>
 
         <StackPanel Grid.Column="5">
             <TextBlock Text="Path"/>
-
+            <Path x:Name="path1" Fill="Orange" Stroke="Red">
+                <!-- 数据类型：
+                    LineGeometry: 直线几何图形
+                    RectangleGeometry: 矩形
+                    EllipseGeometry: 椭圆
+                    PathGeometry: 路径几何图形
+                    StreamGeometry: 轻量级的 PathGeometry
+                    CombinedGeometry: 多个几何图形组合
+                    GeometryGroup: 多个图形组成的组
+                -->
+                <Path.Data>
+                    <PathGeometry>
+                        <PathFigure StartPoint="10,10" IsClosed="True" IsFilled="True">
+                            <PathFigure.Segments>
+                                <LineSegment Point="10,20"/>
+                                <LineSegment Point="20,20"/>
+                                <LineSegment Point="30,30"/>
+                                <LineSegment Point="80,10"/>
+                                <LineSegment Point="160,100"/>
+                                <LineSegment Point="10,60"/>
+                            </PathFigure.Segments>
+                        </PathFigure>
+                    </PathGeometry>
+                </Path.Data>
+            </Path>
+            <!-- 使用 Control.Clip 和 Path 裁剪控件 -->
+            <Button Clip="{Binding ElementName=path1,Path=Data}" Height="100" Content="按钮"/>
         </StackPanel>
     </Grid>
 </Window>
