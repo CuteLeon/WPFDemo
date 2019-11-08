@@ -79,7 +79,13 @@
             ItemsControl.ItemTemplate
             GridViewControl.CellTemplate
         -->
-        <ListBox x:Name="listBox" ItemTemplate="{StaticResource itemTemplate}" ItemsSource="{Binding}"/>
+        <ListBox x:Name="listBox" ItemTemplate="{StaticResource itemTemplate}" ItemsSource="{Binding}">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid></UniformGrid>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+        </ListBox>
         <Label Background="LightGray" Height="Auto" ContentTemplate="{StaticResource contentTemplate}" Content="{Binding ElementName=listBox, Path=SelectedItem}"></Label>
         <TextBox Style="{DynamicResource MyTextBoxStyle}" Margin="10" FontSize="16" Text="测试文本"/>
     </StackPanel>
