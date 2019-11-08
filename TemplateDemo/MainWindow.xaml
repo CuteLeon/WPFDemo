@@ -8,7 +8,13 @@
         Title="MainWindow" Height="450" Width="800">
     <StackPanel>
         <StackPanel.Resources>
-            <DataTemplate x:Key="dataTemplate">
+            <DataTemplate x:Key="contentTemplate">
+                <StackPanel>
+                    <TextBlock Text="{Binding Year}"></TextBlock>
+                    <Rectangle Stroke="Yellow" Fill="Orange" Width="{Binding Price}"></Rectangle>
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Key="itemTemplate">
                 <StackPanel Orientation="Horizontal">
                     <Grid>
                         <Rectangle Stroke="Red" Fill="Orange" Width="{Binding Price}"></Rectangle>
@@ -20,7 +26,14 @@
         </StackPanel.Resources>
         <!-- 使用 Template 实现 内容 和 形式 的解耦
             Template 分为两类：ControlTemplate 和 DataTemplate
+            DataTemplate 是数据的外衣，ControlTemplate 是控件的外衣
         -->
-        <ListBox ItemTemplate="{StaticResource dataTemplate}" ItemsSource="{Binding}"/>
+        <!-- DataTemplate 的三个用处：
+            ContentControl.ControlTemplate
+            ItemsControl.ItemTemplate
+            GridViewControl.CellTemplate
+        -->
+        <ListBox x:Name="listBox" ItemTemplate="{StaticResource itemTemplate}" ItemsSource="{Binding}"/>
+        <Label ContentTemplate="{StaticResource contentTemplate}" Content="{Binding ElementName=listBox, Path=SelectedItem}"></Label>
     </StackPanel>
 </Window>
