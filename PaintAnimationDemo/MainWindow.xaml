@@ -43,6 +43,18 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style TargetType="{x:Type Ellipse}">
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Height" Value="100"/>
+            <Setter Property="Stroke" Value="Gray"/>
+            <Setter Property="StrokeThickness" Value="1"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Margin">
+                <Setter.Value>
+                    <Thickness Left="5" Bottom="5" Top="5" Right="5"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -120,7 +132,21 @@
 
         <StackPanel Grid.Column="2">
             <TextBlock Text="Ellipse"/>
-
+            <Ellipse ToolTip="Ball">
+                <Ellipse.Fill>
+                    <RadialGradientBrush GradientOrigin="0.2,0.8" RadiusX="0.75" RadiusY="0.75">
+                        <RadialGradientBrush.RelativeTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </RadialGradientBrush.RelativeTransform>
+                        <GradientStop Color="White" Offset="0"/>
+                        <GradientStop Color="Gray" Offset="0.65"/>
+                        <GradientStop Color="Black" Offset="1"/>
+                    </RadialGradientBrush>
+                </Ellipse.Fill>
+            </Ellipse>
         </StackPanel>
 
         <StackPanel Grid.Column="3">
