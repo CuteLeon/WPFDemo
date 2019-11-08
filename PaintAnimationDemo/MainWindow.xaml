@@ -31,6 +31,18 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style TargetType="{x:Type Rectangle}">
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Stroke" Value="Gray"/>
+            <Setter Property="StrokeThickness" Value="3"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Margin">
+                <Setter.Value>
+                    <Thickness Left="5" Bottom="5" Top="5" Right="5"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -58,8 +70,52 @@
         </StackPanel>
 
         <StackPanel Grid.Column="1">
+            <!-- Brush 分类
+                SolidColorBrush: 单色实心画刷
+                LinearGradientBrush: 线性渐变画刷
+                RadialGradientBrush: 径向渐变画刷
+                DrawingBrush: 图像回执画刷
+                VisualBrush: 可视化刷
+            -->
             <TextBlock Text="Rectangle"/>
+            <Rectangle RadiusX="10" RadiusY="10"/>
+            <Rectangle Fill="{x:Null}"/>
+            <Rectangle Fill="Black"/>
+            <Rectangle>
+                <Rectangle.Fill>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="Red" Offset="0.2"/>
+                        <GradientStop Color="Blue" Offset="0.5"/>
+                        <GradientStop Color="DeepSkyBlue" Offset="0.7"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle>
+                <Rectangle.Fill>
+                    <RadialGradientBrush Center="0.5,0.5">
+                        <GradientStop Color="Red" Offset="0.1"/>
+                        <GradientStop Color="Blue" Offset="0.8"/>
+                        <GradientStop Color="Transparent" Offset="0.9"/>
+                    </RadialGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle>
+                <Rectangle.Stroke>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="Red" Offset="0.2"/>
+                        <GradientStop Color="Blue" Offset="0.5"/>
+                        <GradientStop Color="DeepSkyBlue" Offset="0.7"/>
+                    </LinearGradientBrush>
+                </Rectangle.Stroke>
+            </Rectangle>
 
+            <Button x:Name="button1" Height="20" Content="测试按钮" Margin="5"></Button>
+            <Rectangle>
+                <Rectangle.Fill>
+                    <!-- 可以克隆其他可视化元素的图像 -->
+                    <VisualBrush Visual="{Binding ElementName=button1}"/>
+                </Rectangle.Fill>
+            </Rectangle>
         </StackPanel>
 
         <StackPanel Grid.Column="2">
