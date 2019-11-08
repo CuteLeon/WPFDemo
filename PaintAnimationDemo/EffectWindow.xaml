@@ -6,7 +6,65 @@
         xmlns:local="clr-namespace:PaintAnimationDemo"
         mc:Ignorable="d"
         Title="EffectWindow" Height="450" Width="800">
+    <!-- 滤镜：
+            BitmapEffect: 早期的功能，使用 CPU 绘制
+            Effect: 新功能，使用 GPU 绘制（优先选择）
+        -->
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Content" Value="按钮内容"/>
+            <Setter Property="Margin">
+                <Setter.Value>
+                    <Thickness Bottom="20" Top="20" Left="20" Right="20"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Button Grid.Row="0" Grid.Column="0">
+            <Button.BitmapEffect>
+                <!-- 投影效果 -->
+                <DropShadowBitmapEffect Color="Gray" Softness="1" ShadowDepth="5" Direction="270" Opacity="1"/>
+            </Button.BitmapEffect>
+        </Button>
+
+        <Button Grid.Row="0" Grid.Column="1">
+            <Button.BitmapEffect>
+                <!-- 斜角效果 -->
+                <BevelBitmapEffect BevelWidth="20" EdgeProfile="Linear" LightAngle="330" Relief="0.4" Smoothness="0.5"/>
+            </Button.BitmapEffect>
+        </Button>
+
+        <Button Grid.Row="0" Grid.Column="2">
+            <Button.BitmapEffect>
+                <!-- 模糊效果 -->
+                <BlurBitmapEffect Radius="10" KernelType="Gaussian"/>
+            </Button.BitmapEffect>
+        </Button>
+
+        <Button Grid.Row="1" Grid.Column="0">
+            <Button.BitmapEffect>
+                <!-- 浮雕效果 -->
+                <EmbossBitmapEffect LightAngle="10" Relief="0.4"/>
+            </Button.BitmapEffect>
+        </Button>
+
+        <Button Grid.Row="1" Grid.Column="1">
+            <Button.BitmapEffect>
+                <!-- 外发光效果 -->
+                <OuterGlowBitmapEffect GlowColor="Red" GlowSize="10" Opacity="1"/>
+            </Button.BitmapEffect>
+        </Button>
     </Grid>
 </Window>
