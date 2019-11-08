@@ -79,6 +79,9 @@
             ItemsControl.ItemTemplate
             GridViewControl.CellTemplate
         -->
+        <!-- 通过 Template 生成的子控件不会被 LogicTree 发现，因此也不会有 x:Name 冲突；
+            可以在外部通过 control.Template.FindName(string) 或 VisualTree 来找到 Template 内部的子控件 
+        -->
         <ListBox x:Name="listBox" ItemTemplate="{StaticResource itemTemplate}" ItemsSource="{Binding}" MinHeight="50">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
