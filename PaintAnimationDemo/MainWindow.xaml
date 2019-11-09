@@ -95,7 +95,7 @@
         </Grid.ColumnDefinitions>
 
         <Button x:Name="effectButton" Grid.Row="0" Grid.Column="0" Margin="5" Content="滤镜" Click="effectButton_Click"/>
-        <Button Grid.Row="0" Grid.Column="1" Margin="5" Content="动画"/>
+        <Button x:Name="transformButton" Grid.Row="0" Grid.Column="1" Margin="5" Content="变换" Click="transformButton_Click"/>
 
         <StackPanel Grid.Row="1" Grid.Column="0">
             <TextBlock Text="Line"/>

@@ -16,5 +16,10 @@ namespace PaintAnimationDemo
         {
             new EffectWindow().Show();
         }
+
+        private void transformButton_Click(object sender, RoutedEventArgs e)
+        {
+            new TransformWindow().Show();
+        }
     }
 }

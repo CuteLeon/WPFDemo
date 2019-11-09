@@ -6,4 +6,12 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Mathilda.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Mathilda.jpg" />
+  </ItemGroup>
+
 </Project>

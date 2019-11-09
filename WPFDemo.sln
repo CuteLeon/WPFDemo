@@ -30,7 +30,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplateDemo", "TemplateDem
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StyleDemo", "StyleDemo\StyleDemo.csproj", "{8D545103-A0E9-48FA-B243-EEB1BC68377D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaintAnimationDemo", "PaintAnimationDemo\PaintAnimationDemo.csproj", "{A9FD913A-FC1C-4EFC-95F8-7C7C19977FC5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaintAnimationDemo", "PaintAnimationDemo\PaintAnimationDemo.csproj", "{A9FD913A-FC1C-4EFC-95F8-7C7C19977FC5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

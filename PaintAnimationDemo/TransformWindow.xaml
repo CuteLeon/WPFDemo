@@ -1,0 +1,109 @@
+﻿<Window x:Class="PaintAnimationDemo.TransformWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PaintAnimationDemo"
+        mc:Ignorable="d"
+        Title="布局变换 | 渲染变化" Height="500" Width="800">
+    <!-- LayoutTransform:
+        在布局完成之前设置，会受布局的控制
+    -->
+    <!-- RenderTransform:
+        在渲染之前设置，不受布局的控制
+    -->
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <ImageBrush ImageSource="Mathilda.jpg" TileMode="Tile"></ImageBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Content" Value="按钮内容"/>
+            <Setter Property="Foreground" Value="Red"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="Margin">
+                <Setter.Value>
+                    <Thickness Bottom="20" Top="20" Left="20" Right="20"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Button Grid.Row="0" Grid.Column="0" Click="Button_Click">
+            <Button.LayoutTransform>
+                <!-- 旋转 -->
+                <RotateTransform Angle="10"/>
+            </Button.LayoutTransform>
+        </Button>
+
+        <Button Grid.Row="0" Grid.Column="1" Click="Button_Click">
+            <Button.LayoutTransform>
+                <!-- 缩放 -->
+                <ScaleTransform ScaleX="1.8" ScaleY="1.8"/>
+            </Button.LayoutTransform>
+        </Button>
+
+        <Button Grid.Row="0" Grid.Column="2" Click="Button_Click">
+            <Button.LayoutTransform>
+                <MatrixTransform>
+                    <!-- 矩阵 -->
+                    <MatrixTransform.Matrix>
+                        <Matrix OffsetX="0" OffsetY="0" M11="1" M12="0" M21="1" M22="-1"></Matrix>
+                    </MatrixTransform.Matrix>
+                </MatrixTransform>
+            </Button.LayoutTransform>
+        </Button>
+
+        <Button Grid.Row="0" Grid.Column="3" Click="Button_Click">
+            <Button.LayoutTransform>
+                <!-- 拉伸 -->
+                <SkewTransform AngleX="30"  AngleY="-30" ></SkewTransform>
+            </Button.LayoutTransform>
+        </Button>
+
+        <Button Grid.Row="1" Grid.Column="0" Click="Button_Click">
+            <Button.RenderTransform>
+                <!-- 旋转 -->
+                <RotateTransform Angle="10"/>
+            </Button.RenderTransform>
+        </Button>
+
+        <Button Grid.Row="1" Grid.Column="1" Click="Button_Click">
+            <Button.RenderTransform>
+                <!-- 缩放 -->
+                <ScaleTransform ScaleX="1.8" ScaleY="1.8"/>
+            </Button.RenderTransform>
+        </Button>
+
+        <Button Grid.Row="1" Grid.Column="2" Click="Button_Click">
+            <Button.RenderTransform>
+                <MatrixTransform>
+                    <!-- 矩阵 -->
+                    <MatrixTransform.Matrix>
+                        <Matrix OffsetX="0" OffsetY="0" M11="1" M12="0" M21="1" M22="-1"></Matrix>
+                    </MatrixTransform.Matrix>
+                </MatrixTransform>
+            </Button.RenderTransform>
+        </Button>
+
+        <Button Grid.Row="1" Grid.Column="3" Click="Button_Click">
+            <Button.RenderTransform>
+                <!-- 拉伸 -->
+                <SkewTransform AngleX="30"  AngleY="-30" ></SkewTransform>
+            </Button.RenderTransform>
+        </Button>
+    </Grid>
+</Window>
