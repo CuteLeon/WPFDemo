@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="EffectWindow" Height="450" Width="800">
     <!-- 滤镜：
-            BitmapEffect: 早期的功能，使用 CPU 绘制
+            BitmapEffect: 早期的功能，使用 CPU 绘制（部分已被弃用）
             Effect: 新功能，使用 GPU 绘制（优先选择）
         -->
     <Window.Resources>
