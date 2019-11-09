@@ -31,6 +31,12 @@ namespace PaintAnimationDemo
                 Duration = new Duration(TimeSpan.FromSeconds(0.5)),
             };
 
+            yAnimation.EasingFunction = new BounceEase()
+            {
+                Bounces = 3,
+                Bounciness = 3,
+            };
+
             this.translate1.BeginAnimation(TranslateTransform.XProperty, xAnimation);
             this.translate1.BeginAnimation(TranslateTransform.YProperty, yAnimation);
         }

@@ -26,7 +26,19 @@
                 <EventTrigger RoutedEvent="Click">
                     <BeginStoryboard>
                         <Storyboard>
-                            <!-- 可以省略部分属性 -->
+                            <!-- 属性说明：
+                            From 开始值
+                            To 目标值
+                            By 变化值
+                            Duration 时长
+                            AccelerationRatio 加速度（与减速度之和小于1.0）
+                            DecelerationRatio 减速度（与加速度之和小于1.0）
+                            SpeedRatio 动画实际播放速度与正常速度比值
+                            AutoReverse 反向播放
+                            RepeatBehavior 循环播放
+                            BeginTime 播放前的等待时间
+                            EasingFunction 缓冲式渐变（特效）
+                            -->
                             <DoubleAnimation From="0" To="200" Duration="0:0:0.2" Storyboard.TargetProperty="RenderTransform.X"/>
                             <DoubleAnimation From="0" To="40" Duration="0:0:0.2" Storyboard.TargetProperty="RenderTransform.Y"/>
                         </Storyboard>
