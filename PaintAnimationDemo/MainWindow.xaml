@@ -96,6 +96,7 @@
 
         <Button x:Name="effectButton" Grid.Row="0" Grid.Column="0" Margin="5" Content="滤镜" Click="effectButton_Click"/>
         <Button x:Name="transformButton" Grid.Row="0" Grid.Column="1" Margin="5" Content="变换" Click="transformButton_Click"/>
+        <Button x:Name="animationButton" Grid.Row="0" Grid.Column="2" Margin="5" Content="动画" Click="animationButton_Click"/>
 
         <StackPanel Grid.Row="1" Grid.Column="0">
             <TextBlock Text="Line"/>
