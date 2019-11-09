@@ -60,8 +60,8 @@
                             </DoubleAnimationUsingKeyFrames>
                             <DoubleAnimationUsingKeyFrames Duration="0:0:0.5" Storyboard.TargetProperty="RenderTransform.Y">
                                 <LinearDoubleKeyFrame KeyTime="0:0:0.0" Value="0"/>
-                                <LinearDoubleKeyFrame KeyTime="0:0:0.15" Value="100"/>
-                                <LinearDoubleKeyFrame KeyTime="0:0:0.35" Value="150"/>
+                                <SplineDoubleKeyFrame KeyTime="0:0:0.15" Value="100"/>
+                                <SplineDoubleKeyFrame KeyTime="0:0:0.35" Value="150"/>
                                 <LinearDoubleKeyFrame KeyTime="0:0:0.5" Value="50"/>
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
