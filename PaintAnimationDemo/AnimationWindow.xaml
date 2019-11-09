@@ -46,9 +46,32 @@
                 </EventTrigger>
             </Style.Triggers>
         </Style>
+        <Style x:Key="keyFramesAnimation" TargetType="{x:Type Button}" BasedOn="{StaticResource commonButtonStyle}">
+            <Style.Triggers>
+                <!-- 由事件触发 -->
+                <EventTrigger RoutedEvent="Click">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimationUsingKeyFrames Duration="0:0:0.5" Storyboard.TargetProperty="RenderTransform.X">
+                                <LinearDoubleKeyFrame KeyTime="0:0:0" Value="0"/>
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.15" Value="200"/>
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.35" Value="350"/>
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.5" Value="400"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Duration="0:0:0.5" Storyboard.TargetProperty="RenderTransform.Y">
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.0" Value="0"/>
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.15" Value="100"/>
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.35" Value="150"/>
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.5" Value="50"/>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
     </Window.Resources>
     <Canvas>
-        <Button Style="{StaticResource moveAnimation}">
+        <Button Style="{StaticResource moveAnimation}" Canvas.Top="0">
             <Button.RenderTransform>
                 <TranslateTransform X="0" Y="0"/>
             </Button.RenderTransform>
@@ -57,6 +80,12 @@
         <Button x:Name="button1" Style="{StaticResource commonButtonStyle}" Canvas.Top="80" Click="button1_Click">
             <Button.RenderTransform>
                 <TranslateTransform x:Name="translate1"/>
+            </Button.RenderTransform>
+        </Button>
+
+        <Button Style="{StaticResource keyFramesAnimation}" Canvas.Top="160">
+            <Button.RenderTransform>
+                <TranslateTransform X="0" Y="0"/>
             </Button.RenderTransform>
         </Button>
     </Canvas>
