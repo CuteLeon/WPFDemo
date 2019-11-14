@@ -34,7 +34,7 @@ namespace BindingDemo
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (!((sender as FrameworkElement).Tag is Type type) ||
+            if (!((e.OriginalSource as FrameworkElement).Tag is Type type) ||
                 !((Activator.CreateInstance(type) is Window window)))
             {
                 return;
